@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Root theme variables */
+:root {
+  --background: #f9fafb; /* Tailwind gray-50 */
+  --foreground: #171717;
+
+  /* Brand palette */
+  --brand-primary: #4f46e5; /* indigo-600 */
+  --brand-secondary: #9333ea; /* purple-600 */
+  --brand-accent: #0ea5e9; /* sky-500 */
+
+  /* Gradient */
+  --brand-gradient: linear-gradient(
+    to right,
+    var(--brand-primary),
+    var(--brand-secondary)
+  );
+
+  /* Font variable (points to the Lato font loaded by Next.js) */
+  --font-sans: var(--font-lato, ui-sans-serif, system-ui);
+  --font-mono: ui-monospace, monospace;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #f5f5f5;
+    --brand-primary: #6366f1; /* lighter indigo */
+    --brand-secondary: #a855f7; /* lighter purple */
+    --brand-accent: #38bdf8; /* lighter sky */
+  }
+}
+
+/* Tailwind layers for customization */
+@layer base {
+  body {
+    @apply antialiased bg-[var(--background)] text-[var(--foreground)];
+    /* Corrected syntax from "fontFamily" to "font-family" */
+    font-family: var(--font-sans); 
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-gray-900;
+  }
+
+  p {
+    @apply text-gray-600;
+  }
+}
+
+@layer components {
+  /* Gradient button style (optional) */
+  .btn-gradient {
+    @apply inline-block px-6 py-3 rounded-md text-white font-medium shadow-md transition-transform;
+    background: var(--brand-gradient);
+  }
+  .btn-gradient:hover {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
