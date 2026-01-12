@@ -25,12 +25,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={lato.variable} suppressHydrationWarning>
-      {/* suppressHydrationWarning on <html> and <body> is the standard fix 
-          for attributes injected by browser extensions like 'bis_skin_checked'.
-      */}
-      <body className="antialiased bg-gray-50 text-gray-900" suppressHydrationWarning>
+      <body className="antialiased bg-gray-50 text-gray-900 min-h-screen flex flex-col" suppressHydrationWarning>
         <Header />
-        <main>{children}</main>
+        <main className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

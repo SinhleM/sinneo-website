@@ -70,6 +70,12 @@
   }
 }
 
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

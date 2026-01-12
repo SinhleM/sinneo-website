@@ -1,81 +1,83 @@
 "use client";
-import { Code, Database, Cog, ArrowRight } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const services = [
   {
-    icon: Code,
     title: "Software Development",
-    description: "Custom web and enterprise systems tailored to business and government needs. We build scalable, secure, and maintainable solutions that drive digital transformation.",
-    features: ["Web Applications", "Enterprise Systems", "API Development", "Legacy Modernization"],
+    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=800",
+    link: "#contact",
   },
   {
-    icon: Database,
     title: "Data Engineering & Analytics",
-    description: "Transform raw data into actionable insights. We design robust data pipelines, create interactive dashboards, and deliver comprehensive reporting solutions.",
-    features: ["Data Pipelines", "BI Dashboards", "Predictive Analytics", "Data Warehousing"],
+    image: "/consulting.jpg",
+    link: "#contact",
   },
   {
-    icon: Cog,
     title: "Automation Solutions",
-    description: "Streamline operations with intelligent automation. We integrate systems, automate workflows, and optimize processes to boost productivity and reduce costs.",
-    features: ["Process Automation", "System Integration", "Workflow Optimization", "RPA Solutions"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    link: "#contact",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="section-padding bg-background">
-      <div className="section-container">
+    <section id="services" className="py-16 bg-white w-full">
+      {/* The 'mx-auto' on the container ensures equal X margins on both sides.
+        The 'max-w' here controls the total width of your services area.
+      */}
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
-          <span className="text-accent font-semibold uppercase tracking-wider text-sm">What We Do</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
+        <div className="relative mb-12 h-24 flex items-end">
+          <span 
+            className="absolute top-0 left-0 text-[60px] md:text-[90px] font-black leading-none select-none z-0"
+            style={{ 
+              color: 'transparent',
+              WebkitTextStroke: '1px #e5e7eb'
+            }}
+          >
+            SERVICES
+          </span>
+          <h2 className="relative z-10 text-2xl md:text-3xl font-black text-[#0f172a] uppercase tracking-tighter pb-2">
             OUR SERVICES
           </h2>
-          <p className="text-muted-foreground text-lg">
-            We deliver end-to-end technology solutions that empower organizations 
-            to achieve operational excellence and strategic objectives.
-          </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="group bg-card border border-border rounded-xl p-8 card-hover"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-accent group-hover:text-accent-foreground transition-colors" />
+        {/* - gap-4: Reduces the space between the images significantly.
+          - justify-items-center: Keeps everything balanced in the middle of each column.
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full justify-items-center">
+          {services.map((service) => (
+            <div key={service.title} className="group flex flex-col cursor-pointer w-full max-w-[320px]">
+              
+              {/* Scaled Square Image Box */}
+              <div className="overflow-hidden mb-4 aspect-square bg-gray-100 border border-gray-100 w-full">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-in-out"
+                />
               </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-4">
+              {/* Scaled Title */}
+              <h3 className="text-base font-black text-[#0f172a] mb-3 leading-tight uppercase tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {service.description}
-              </p>
 
-              {/* Features */}
-              <ul className="space-y-2 mb-6">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-foreground/80">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Link */}
-              <a 
-                href="#contact" 
-                className="inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all"
-              >
-                Learn More <ArrowRight className="w-4 h-4" />
-              </a>
+              {/* Scaled Footer */}
+              <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between w-full">
+                <a
+                  href={service.link}
+                  className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 group-hover:text-[#38bdf8] transition-colors"
+                >
+                  Read More
+                </a>
+                
+                {/* Scaled Plus Box */}
+                <div className="w-8 h-8 flex items-center justify-center bg-[#f8fafc] border border-gray-100 text-[#38bdf8] group-hover:bg-[#38bdf8] group-hover:border-[#38bdf8] group-hover:text-white transition-all duration-300">
+                  <Plus className="w-3.5 h-3.5" />
+                </div>
+              </div>
             </div>
           ))}
         </div>
