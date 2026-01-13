@@ -1,199 +1,94 @@
 "use client";
-import { useState } from "react";
-import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import React from "react";
+
+const pillars = [
+  { 
+    id: "01", 
+    title: "INTELLIGENT SYSTEMS", 
+    subtitle: "Data, Analytics, Automation" 
+  },
+  { 
+    id: "02", 
+    title: "DIGITAL INFRASTRUCTURE", 
+    subtitle: "Cloud, DevOps, Platforms" 
+  },
+  { 
+    id: "03", 
+    title: "VENTURE BUILDING", 
+    subtitle: "Strategy, Engineering, Scale" 
+  },
+];
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-
-    toast({
-      title: "Message Sent",
-      description: "Thank you for your inquiry. We'll be in touch soon.",
-    });
-  };
-
   return (
-    <section id="contact" className="section-padding bg-hero">
-      <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Info */}
-          <div>
-            <span className="text-hero-accent font-semibold uppercase tracking-wider text-sm">Get in Touch</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-hero-foreground mt-3 mb-6">
-              CONTACT US
+    <section id="contact" className="relative">
+      {/* Upper Content Area */}
+      <div 
+        className="relative py-24 md:py-32 bg-[#0a1e5e] overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(10, 30, 94, 0.9), rgba(10, 30, 94, 0.9)), url('https://www.transparenttextures.com/patterns/blueprint.png')`,
+          backgroundSize: 'cover'
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center md:text-left">
+          {/* Hollow Watermark */}
+          <span 
+            className="absolute -top-10 md:-top-16 left-1/2 md:left-12 -translate-x-1/2 md:translate-x-0 text-[60px] md:text-[120px] font-black leading-none select-none opacity-10"
+            style={{ 
+              color: 'transparent',
+              WebkitTextStroke: '2px #ffffff' 
+            }}
+          >
+            LET'S CHAT
+          </span>
+
+          <div className="relative z-20 max-w-2xl">
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
+              LET'S TALK WITH US
             </h2>
-            <p className="text-hero-foreground/80 text-lg mb-10 max-w-md">
-              Ready to discuss your next project? Get in touch with us to explore 
-              how we can help transform your operations with technology.
+            
+            <p className="text-blue-100/80 text-sm md:text-base font-medium leading-relaxed mb-10 max-w-xl">
+              Sinneo Group is a technology driven company focused on building intelligent, scalable solutions. 
+              Have a project, idea, or opportunity in mind? Let’s chat and explore how we can work together.
             </p>
 
-            <div className="space-y-6">
-              {/* Email */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-hero-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-hero-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-hero-foreground mb-1">Email</h3>
-                  <a 
-                    href="mailto:info@sinneo.co.za" 
-                    className="text-hero-foreground/70 hover:text-hero-accent transition-colors"
-                  >
-                    info@sinneo.co.za
-                  </a>
-                </div>
-              </div>
-
-              {/* Location */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-hero-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-hero-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-hero-foreground mb-1">Location</h3>
-                  <p className="text-hero-foreground/70">
-                    South Africa
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-8 md:p-10">
-            {isSubmitted ? (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Thank You!</h3>
-                <p className="text-muted-foreground mb-6">
-                  Your message has been received. We'll respond within 24-48 hours.
-                </p>
-                <button
-                  onClick={() => setIsSubmitted(false)}
-                  className="text-accent font-semibold hover:underline"
-                >
-                  Send Another Message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    maxLength={100}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    maxLength={255}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={5}
-                    maxLength={1000}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                    placeholder="Tell us about your project or inquiry..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-accent-foreground/30 border-t-accent-foreground rounded-full animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="w-5 h-5" />
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
+            <button className="cursor-pointer bg-white text-[#0a1e5e] font-black uppercase tracking-widest text-[10px] px-10 py-4 transition-all duration-300 hover:bg-[#ff5100] hover:text-white active:scale-95 shadow-lg">
+              CONTACT US
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Updated High-Impact Pillar Bar */}
+      <div className="relative z-30 max-w-6xl mx-auto -mt-12 md:-mt-16 px-6">
+        <div className="bg-[#ff5100] grid grid-cols-1 md:grid-cols-3 py-10 md:py-14 shadow-2xl">
+          {pillars.map((pillar, index) => (
+            <div 
+              key={pillar.id} 
+              className={`flex items-center justify-start md:justify-center gap-5 px-10 ${
+                index !== pillars.length - 1 ? "md:border-r border-white/20" : ""
+              } mb-8 md:mb-0`}
+            >
+              {/* The Number 01, 02, 03 */}
+              <div className="text-white font-black text-5xl md:text-6xl leading-none opacity-40">
+                {pillar.id}
+              </div>
+              
+              {/* Text Pillar Content */}
+              <div className="flex flex-col">
+                <span className="text-white font-black text-lg md:text-xl uppercase leading-tight tracking-tight mb-1">
+                  {pillar.title}
+                </span>
+                <span className="text-white/80 font-bold text-[10px] md:text-[11px] uppercase tracking-[0.15em]">
+                  {pillar.subtitle}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div className="h-24 bg-white" />
     </section>
   );
 };
