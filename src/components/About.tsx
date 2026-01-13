@@ -44,7 +44,7 @@ const About = () => {
             </p>
 
             {/* Signature Orange Button */}
-            <button className="bg-[#ff5100] hover:bg-[#e64a00] text-white font-black uppercase tracking-widest text-xs px-10 py-4 transition-all duration-300 shadow-lg active:scale-95">
+            <button className="bg-[#ff5100] hover:bg-[#e64a00] hover:cursor-pointer text-white font-black uppercase tracking-widest text-xs px-10 py-4 transition-all duration-300 shadow-lg active:scale-95">
               Read More
             </button>
           </div>

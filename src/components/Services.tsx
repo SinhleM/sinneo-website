@@ -9,7 +9,7 @@ const services = [
   },
   {
     title: "Data Engineering & Analytics",
-    image: "/consulting.jpg",
+    image: "consulting.jpg",
     link: "#contact",
   },
   {
@@ -65,7 +65,7 @@ const Services = () => {
               </h3>
 
               {/* Scaled Footer */}
-              <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between w-full">
+              <div className="mt-auto pt-3 border-t border-gray-100 group-hover:border-orange-500 flex items-center justify-between w-full">
                 <a
                   href={service.link}
                   className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 group-hover:text-[#38bdf8] transition-colors"

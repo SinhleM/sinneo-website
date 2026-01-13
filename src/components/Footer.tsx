@@ -29,8 +29,9 @@ const Footer = () => {
                 Sinneo Group
               </span>
             </div>
-            <p className="text-[10px] leading-tight opacity-70">
-              Technology driven company focused on building intelligent, scalable solutions across South Africa.
+            <p className="text-[11px] leading-tight text-white/50">
+              Technology driven company focused on building intelligent, 
+              scalable solutions <br /> across  South Africa.
             </p>
           </div>
 
@@ -44,7 +45,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="hover:text-[#ff5100] transition-colors text-[10px] cursor-pointer"
+                    className="hover:text-[#ff5100] transition-colors text-[11px] cursor-pointer"
                   >
                     {link.label}
                   </a>
@@ -61,18 +62,18 @@ const Footer = () => {
             <div className="space-y-2 text-[10px] opacity-70">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3 h-3 text-[#ff5100] mt-0.5" />
-                <p>Sandton, Gauteng<br />South Africa</p>
+                <p className="text-white/80">Sandton, Gauteng<br />South Africa</p>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3 h-3 text-[#ff5100]" />
-                <a href="tel:+27739869091" className="hover:text-white transition-colors cursor-pointer">
+                <a href="tel:+27739869091" className="text-white/80 hover:text-white transition-colors cursor-pointer">
                   +27 73 986 9091
                 </a>
               </div>
               {/* Added Email Line */}
               <div className="flex items-center gap-2">
                 <Mail className="w-3 h-3 text-[#ff5100]" />
-                <a href="mailto:info@sinneogroup.com" className="hover:text-white transition-colors cursor-pointer">
+                <a href="mailto:info@sinneogroup.com" className="text-white/80 hover:text-white transition-colors cursor-pointer">
                   info@sinneogroup.com
                 </a>
               </div>
@@ -102,7 +103,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-900 pt-4 flex justify-between items-center">
-          <p className="text-[8px] tracking-widest uppercase font-bold opacity-50">
+          <p className="text-[8px] tracking-widest uppercase font-bold opacity-90">
             © {currentYear} Sinneo Group | Sandton, ZA
           </p>
           

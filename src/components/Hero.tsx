@@ -27,8 +27,8 @@ const Hero = () => {
           
           {/* Accent Line */}
           <div className="flex items-center justify-start gap-4 mb-8 animate-fade-in">
-            <div className="w-16 h-[3px] bg-[#38bdf8]" />
-            <span className="text-[#38bdf8] text-xs font-black uppercase tracking-[0.3em]">
+            <div className="w-16 h-[3px] bg-[#ff5100]" />
+            <span className="text-[#ffffff] text-xs font-black uppercase tracking-[0.3em]">
               Trusted Technology Partner
             </span>
           </div>
