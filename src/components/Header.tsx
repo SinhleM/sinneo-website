@@ -80,7 +80,7 @@ const Header = () => {
             <div className="w-[180px] flex-shrink-0">
               <a href="#home" className="cursor-pointer">
                 <img 
-                  src="/Sinneo-Logo-Transparent.png" 
+                  src="/output-onlinepngtools - Copy.png" 
                   alt="Sinneo Group Logo" 
                   className={`transition-all duration-500 object-contain ${scrolled ? "h-8" : "h-11"}`}
                 />

@@ -12,9 +12,9 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Sinneo Group",
-  description: "Building ventures that transform business",
+  description: "Building Solutions that transform business",
   icons: {
-    icon: "/Sinneo-Logo1-Transparent.png",
+    icon: "/app/favicon.ico",
   }
 };
 

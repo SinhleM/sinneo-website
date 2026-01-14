@@ -16,13 +16,13 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Stronger left-to-right gradient to make left-aligned white text pop */}
-<div className="absolute inset-0 bg-[#0f172a]/80" />
+<div className="absolute inset-0 bg-[#0f172a]/70" />
       </div>
       
       {/* - pt-48 pb-32: Increased Y-padding significantly 
           - text-left: Explicitly ensuring everything stays on the left
       */}
-      <div className="section-container relative z-10 pt-48 pb-32 text-left" suppressHydrationWarning>
+      <div className="section-container relative z-10 pt-40 pb-32 text-left" suppressHydrationWarning>
         <div className="max-w-5xl" suppressHydrationWarning>
           
           {/* Accent Line */}
@@ -37,18 +37,19 @@ const Hero = () => {
               - Leading-[0.85] keeps the lines tight for that "Construction" look
           */}
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white leading-[0.85] mb-8 animate-fade-in italic italic-custom uppercase tracking-tighter">
-            <span className="text-[#38bdf8]">TECHNOLOGY</span>
+            <span className="">TECHNOLOGY</span>
             <br />
             SOLUTIONS
             <br />
-            THAT <span className="text-[#38bdf8]">DELIVER</span>
+            THAT <span className="text-[#132b72]/95">DELIVER</span>
           </h1>
+          {/* text-[#38bdf8] [#1a3073]  */}
 
           {/* CTAs - Left aligned */}
           <div className="flex flex-col sm:flex-row justify-start gap-5 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <a 
               href="#services" 
-              className="bg-[#38bdf8] hover:bg-[#0ea5e9] text-white px-12 py-5 text-sm font-black uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-3 group"
+              className="bg-[#132b72]/90 hover:bg-[#0d256d] text-white px-12 py-5 text-sm font-black uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-3 group"
             >
               Explore Our Services
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
