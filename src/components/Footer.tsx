@@ -62,7 +62,7 @@ const Footer = () => {
             <div className="space-y-2 text-[10px] opacity-70">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3 h-3 text-[#ff5100] mt-0.5" />
-                <p className="text-white/80">Sandton, Gauteng<br />South Africa</p>
+                <p className="text-white/80">Pretoria, Gauteng<br />South Africa</p>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3 h-3 text-[#ff5100]" />
@@ -74,7 +74,7 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Mail className="w-3 h-3 text-[#ff5100]" />
                 <a href="mailto:info@sinneogroup.com" className="text-white/80 hover:text-white transition-colors cursor-pointer">
-                  info@sinneogroup.com
+                  info@sinneogroup.co.za
                 </a>
               </div>
             </div>
@@ -104,7 +104,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-900 pt-4 flex justify-between items-center">
           <p className="text-[8px] tracking-widest uppercase font-bold opacity-90">
-            © {currentYear} Sinneo Group | Sandton, ZA
+            © {currentYear} Sinneo Group | Pretoria, ZA
           </p>
           
           <button 

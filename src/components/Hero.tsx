@@ -16,7 +16,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Stronger left-to-right gradient to make left-aligned white text pop */}
-<div className="absolute inset-0 bg-[#0f172a]/70" />
+<div className="absolute inset-0 bg-[#0f172a]/65" />
       </div>
       
       {/* - pt-48 pb-32: Increased Y-padding significantly 

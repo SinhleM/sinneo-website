@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const categories = ["Show All", "Software", "Data", "Automation", "Infrastructure"];
+const categories = ["Show All", "Software", "AI", "Infrastructure", "Data"];
 
 const projects = [
   {

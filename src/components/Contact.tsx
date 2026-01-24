@@ -1,25 +1,31 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import ContactModal from "../modals/ContactModal";
 
 const pillars = [
   { 
     id: "01", 
-    title: "INTELLIGENT SYSTEMS", 
-    subtitle: "Data, Analytics, Automation" 
+    title: "COMPUTER EQUIPMENT & CONFIGURATION", 
+    subtitle: "Supply, Setup & Implementation" 
   },
   { 
     id: "02", 
-    title: "DIGITAL INFRASTRUCTURE", 
-    subtitle: "Cloud, DevOps, Platforms" 
+    title: "CLOUD MIGRATION SERVICES", 
+    subtitle: "Secure Transition & Deployment" 
   },
   { 
     id: "03", 
-    title: "VENTURE BUILDING", 
-    subtitle: "Strategy, Engineering, Scale" 
+    title: "SOFTWARE & AI WORKFLOW DELIVERY", 
+    subtitle: "Custom Solutions & Automation" 
   },
 ];
 
 const Contact = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalOpen = () => setIsModalOpen(true);
+  const handleModalClose = () => setIsModalOpen(false);
+
   return (
     <section id="contact" className="relative">
       {/* Upper Content Area */}
@@ -48,16 +54,23 @@ const Contact = () => {
             </h2>
             
             <p className="text-blue-100/80 text-sm md:text-base font-medium leading-relaxed mb-10 max-w-xl">
-              Sinneo Group is a technology driven company focused on building intelligent, scalable solutions. 
+              Sinneo Group is a technology-driven company focused on building intelligent, scalable solutions. 
               Have a project, idea, or opportunity in mind? Let’s chat and explore how we can work together.
             </p>
 
-            <button className="cursor-pointer bg-white text-[#0a1e5e] font-black uppercase tracking-widest text-[10px] px-10 py-4 transition-all duration-300 hover:bg-[#ff5100] hover:text-white active:scale-95 shadow-lg">
+            {/* Contact Us Button */}
+            <button 
+              onClick={handleModalOpen}
+              className="cursor-pointer bg-white text-[#0a1e5e] font-black uppercase tracking-widest text-[10px] px-10 py-4 transition-all duration-300 hover:bg-[#ff5100] hover:text-white active:scale-95 shadow-lg"
+            >
               CONTACT US
             </button>
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && <ContactModal onClose={handleModalClose} />}
 
       {/* Updated High-Impact Pillar Bar */}
       <div className="relative z-30 max-w-6xl mx-auto -mt-12 md:-mt-16 px-6">
@@ -69,7 +82,7 @@ const Contact = () => {
                 index !== pillars.length - 1 ? "md:border-r border-white/20" : ""
               } mb-8 md:mb-0`}
             >
-              {/* The Number 01, 02, 03 */}
+              {/* Number */}
               <div className="text-white font-black text-5xl md:text-6xl leading-none opacity-40">
                 {pillar.id}
               </div>
