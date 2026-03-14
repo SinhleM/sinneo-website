@@ -1,4 +1,12 @@
 module.exports = {
-  siteUrl: 'https://www.sinneogroup.co.za',
+  siteUrl: 'https://sinneogroup.co.za',
   generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+  },
 }
