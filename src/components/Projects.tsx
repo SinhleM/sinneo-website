@@ -7,17 +7,17 @@ const projects = [
   {
     title: "Provincial Digital Transformation",
     category: "Data",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800",
+    image: "/project1.avif",
   },
   {
     title: "Enterprise ERM Platform",
     category: "Software",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800",
+    image: "/project2.avif",
   },
   {
     title: "Cloud Infrastructure Scale",
     category: "Infrastructure",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
+    image: "/project3.avif ",
   },
 ];
 

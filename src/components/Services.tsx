@@ -4,17 +4,17 @@ import { Plus } from "lucide-react";
 const services = [
   {
     title: "Software Development",
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=800",
+    image: "/service1.avif",
     link: "#contact",
   },
   {
     title: "Data Engineering & Analytics",
-    image: "consulting.jpg",
+    image: "/service2.avif",
     link: "#contact",
   },
   {
     title: "Automation Solutions",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    image: "/service3.avif",
     link: "#contact",
   },
 ];
@@ -26,12 +26,12 @@ const Services = () => {
         The 'max-w' here controls the total width of your services area.
       */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        
+
         {/* Section Header */}
         <div className="relative mb-12 h-24 flex items-end">
-          <span 
+          <span
             className="absolute top-0 left-0 text-[60px] md:text-[90px] font-black leading-none select-none z-0"
-            style={{ 
+            style={{
               color: 'transparent',
               WebkitTextStroke: '1px #e5e7eb'
             }}
@@ -49,7 +49,7 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full justify-items-center">
           {services.map((service) => (
             <div key={service.title} className="group flex flex-col cursor-pointer w-full max-w-[320px]">
-              
+
               {/* Scaled Square Image Box */}
               <div className="overflow-hidden mb-4 aspect-square bg-gray-100 border border-gray-100 w-full">
                 <img
@@ -72,7 +72,7 @@ const Services = () => {
                 >
                   Read More
                 </a>
-                
+
                 {/* Scaled Plus Box */}
                 <div className="w-8 h-8 flex items-center justify-center bg-[#f8fafc] border border-gray-100 text-[#38bdf8] group-hover:bg-[#38bdf8] group-hover:border-[#38bdf8] group-hover:text-white transition-all duration-300">
                   <Plus className="w-3.5 h-3.5" />
