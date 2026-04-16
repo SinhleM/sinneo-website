@@ -17,35 +17,35 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#030712] text-gray-400 pt-10 pb-5 relative border-t border-gray-900">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6 mb-8">
-          
+    <footer className="bg-[#030712] text-gray-400 pt-12 pb-6 relative border-t border-gray-900">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+
           {/* Column 1: Brand */}
-          <div className="lg:pr-2">
-            <div className="flex items-center gap-2 mb-3">
-              <Building2 className="w-4 h-4 text-[#ff5100]" />
-              <span className="text-white font-black text-base uppercase tracking-tighter">
+          <div className="lg:pr-4">
+            <div className="flex items-center gap-2 mb-4">
+              <Building2 className="w-5 h-5 text-[#ff5100]" />
+              <span className="text-white font-black text-xl uppercase tracking-tighter">
                 Sinneo Group
               </span>
             </div>
-            <p className="text-[11px] leading-tight text-white/50">
-              Technology driven company focused on building intelligent, 
-              scalable solutions <br /> across  South Africa.
+            <p className="text-sm leading-normal text-white/50">
+              Technology driven group focused on building intelligent,
+              scalable solutions through divisions like Sinneo Financial Technologies (Pty) Ltd.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="md:pl-2">
-            <h3 className="text-white font-black text-[11px] uppercase mb-3 tracking-wider">
+          <div className="md:pl-4">
+            <h3 className="text-white font-black text-sm uppercase mb-4 tracking-wider">
               Navigation
             </h3>
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href} 
-                    className="hover:text-[#ff5100] transition-colors text-[11px] cursor-pointer"
+                  <a
+                    href={link.href}
+                    className="hover:text-[#ff5100] transition-colors text-sm cursor-pointer"
                   >
                     {link.label}
                   </a>
@@ -54,64 +54,65 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Contact Info (Added Email Link) */}
+          {/* Column 3: Contact Info */}
           <div>
-            <h3 className="text-white font-black text-[11px] uppercase mb-3 tracking-wider">
+            <h3 className="text-white font-black text-sm uppercase mb-4 tracking-wider">
               Contact
             </h3>
-            <div className="space-y-2 text-[10px] opacity-70">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3 h-3 text-[#ff5100] mt-0.5" />
+            <div className="space-y-3 text-sm opacity-70">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#ff5100] mt-0.5" />
                 <p className="text-white/80">Pretoria, Gauteng<br />South Africa</p>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3 h-3 text-[#ff5100]" />
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#ff5100]" />
                 <a href="tel:+27739869091" className="text-white/80 hover:text-white transition-colors cursor-pointer">
                   +27 73 986 9091
                 </a>
               </div>
-              {/* Added Email Line */}
-              <div className="flex items-center gap-2">
-                <Mail className="w-3 h-3 text-[#ff5100]" />
-                <a href="mailto:info@sinneogroup.com" className="text-white/80 hover:text-white transition-colors cursor-pointer">
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#ff5100]" />
+                <a href="mailto:info@sinneogroup.co.za" className="text-white/80 hover:text-white transition-colors cursor-pointer">
                   info@sinneogroup.co.za
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Column 4: Newsletter (Added Pointer Cursor) */}
+          {/* Column 4: Newsletter */}
           <div className="flex flex-col">
-            <h3 className="text-white font-black text-[11px] uppercase mb-3 tracking-wider">
+            <h3 className="text-white font-black text-sm uppercase mb-4 tracking-wider">
               Newsletter
             </h3>
-            <div className="flex flex-nowrap items-stretch mb-4 overflow-hidden rounded-sm border border-gray-800 h-9">
-              <input 
-                type="email" 
-                placeholder="Email" 
-                className="bg-[#0f172a]/30 text-[9px] px-3 py-0 w-full focus:ring-0 outline-none border-none min-w-0 cursor-text"
+            <div className="flex flex-nowrap items-stretch mb-4 overflow-hidden rounded-sm border border-gray-800 h-11">
+              <input
+                type="email"
+                placeholder="Email"
+                className="bg-[#0f172a]/30 text-sm px-4 py-0 w-full focus:ring-0 outline-none border-none min-w-0 cursor-text"
               />
-              {/* Added cursor-pointer to the button */}
-              <button className="bg-[#ff5100] text-white px-4 py-0 text-[9px] font-black uppercase tracking-tighter hover:bg-[#e64a00] transition-colors whitespace-nowrap flex items-center justify-center cursor-pointer active:scale-95">
+              <button className="bg-[#ff5100] text-white px-6 py-0 text-xs font-black uppercase tracking-tighter hover:bg-[#e64a00] transition-colors whitespace-nowrap flex items-center justify-center cursor-pointer active:scale-95">
                 SIGN UP
               </button>
             </div>
-            
-           
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-900 pt-4 flex justify-between items-center">
-          <p className="text-[8px] tracking-widest uppercase font-bold opacity-90">
-            © {currentYear} Sinneo Group | Pretoria, ZA
-          </p>
-          
-          <button 
+        <div className="border-t border-gray-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <p className="text-[10px] tracking-widest uppercase font-bold opacity-90">
+              © {currentYear} Sinneo Group (Pty) Ltd | Sinneo Financial Technologies (Pty) Ltd
+            </p>
+            <p className="text-[9px] tracking-widest uppercase opacity-50">
+              Pretoria, ZA
+            </p>
+          </div>
+
+          <button
             onClick={scrollToTop}
-            className="bg-[#ff5100] p-1.5 text-white hover:scale-110 transition-transform shadow-lg rounded-sm cursor-pointer"
+            className="bg-[#ff5100] p-2 text-white hover:scale-110 transition-transform shadow-lg rounded-sm cursor-pointer"
           >
-            <ArrowUp className="w-3 h-3" />
+            <ArrowUp className="w-4 h-4" />
           </button>
         </div>
       </div>

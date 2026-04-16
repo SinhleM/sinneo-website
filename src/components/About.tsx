@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import React, { useState } from "react";
 
 const About = () => {
@@ -8,15 +8,15 @@ const About = () => {
     <section id="about" className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left Content Column */}
           <div className="relative">
             {/* Outlined Watermark Text */}
-            <span 
+            <span
               className="absolute -top-12 left-0 text-[60px] md:text-[100px] font-black leading-none select-none z-0 opacity-5"
-              style={{ 
+              style={{
                 color: 'transparent',
-                WebkitTextStroke: '2px #0f172a' 
+                WebkitTextStroke: '2px #0f172a'
               }}
             >
               ABOUT US
@@ -30,43 +30,42 @@ const About = () => {
             {/* Initial Preview Text */}
             <div className="text-gray-600 text-base leading-relaxed mb-4 space-y-4">
               <p className="text-[#0f172a] text-lg font-bold leading-relaxed mb-6">
-                Sinneo Group is a modern, founder-led holding company built around 
-                execution, systems, and long-term value creation. We identify 
-                high-upside opportunities and scale them using technology and 
-                disciplined strategy.
+                Sinneo Group is a founder led holding company built around execution,
+                systems, and long term value creation. Our first operating division ;
+                Sinneo Financial Technologies (Pty) Ltd builds intelligent financial
+                infrastructure for the South African market.
               </p>
               <p className="text-gray-600 text-base leading-relaxed mb-10">
-                At our core, we operate with a builder's mindset. We prioritize 
-                fundamentals, automation, and leverage over shortcuts. We are creating 
-                systems that collect data, analyse behavior, and improve decision-making, 
-                positioning ourselves as a quiet operator building the tools that modern 
-                businesses rely on.
+                We operate with a builder's mindset. We prioritise shipping real products
+                over pitching ideas. Our flagship product, Sorae, is a live bank statement
+                intelligence API trusted by lenders, rental agents, and employers to make
+                fast, reliable affordability decisions ; without manual review.
               </p>
             </div>
 
-            {/* Expanded Text (hidden initially) */}
+            {/* Expanded Text */}
             {showMore && (
               <div className="text-gray-600 text-base leading-relaxed mb-10 space-y-4">
                 <p>
-                  We create systems that collect data, analyse behavior, and improve decision-making even further. 
-                  Our approach allows us to quietly build businesses that scale efficiently 
-                  without unnecessary distractions.
+                  Sorae parses PDF bank statements from all five major South African banks:
+                  Capitec, FNB, ABSA, Standard Bank, and Nedbank; returning verified income,
+                  a full expense breakdown, an affordability score, and up to 13 behavioural
+                  risk signals in under 3 seconds.
                 </p>
                 <p>
-                  <span className="text-xl font-bold text-gray-700">Sinneo Group </span> is deeply committed to sustainable growth. We combine 
-                   innovative technology solutions with disciplined operational practices, 
-                  ensuring long-term value creation for our partners, stakeholders, 
-                  and communities.
+                  <span className="text-md font-semibold text-gray-900">Privacy is not an after thought. </span> Sorae
+                  is built on a zero data retention architecture ; raw statements are never
+                  stored, making it POPIA compliant by design. In a market where data privacy
+                  obligations are increasingly enforced, this is a meaningful competitive advantage.
                 </p>
                 <p>
-                  Our team of experts focuses on leveraging market insight, operational rigor, 
-                  and strategic partnerships to deliver consistent results. We 
-                  believe in building for the future while staying grounded in strong 
-                  fundamentals today.
+                  Sinneo Group is based in South Africa and focused on identifying high-upside
+                  opportunities at the intersection of financial services and technology. We scale
+                  using disciplined systems, not shortcuts.
                 </p>
                 <p>
-                  By integrating automation and data-driven systems across all ventures, 
-                  Sinneo Group ensures efficiency, resilience, and innovation at every level of operation.
+                  We are building for the long term ; starting with the tools that the South
+                  African credit and rental market needs right now.
                 </p>
               </div>
             )}
@@ -84,8 +83,8 @@ const About = () => {
           <div className="relative">
             {/* Main Image Container */}
             <div className="relative z-10 overflow-hidden shadow-2xl">
-              <img 
-                src="/tommy-texter-T42j_xLOqw0-unsplash.jpg" // Replace with your actual image path
+              <img
+                src="/tommy-texter-T42j_xLOqw0-unsplash.jpg"
                 alt="Sinneo Group Builder"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
               />
