@@ -12,18 +12,33 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", company: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder: Integrate with email API or backend
-    console.log("Form submitted:", form);
-    alert("Thank you! Your message has been sent.");
-    onClose();
+    setStatus("sending");
+    setErrorMessage("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong.");
+      }
+      setStatus("sent");
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -43,7 +58,30 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
         </div>
 
         {/* Form */}
+        {status === "sent" ? (
+          <div className="px-6 py-10 text-center" role="status">
+            <p className="text-[#0a1e5e] font-extrabold uppercase mb-2">Message sent</p>
+            <p className="text-sm mb-6">Thank you. We will get back to you within 8-24 hours.</p>
+            <button
+              onClick={onClose}
+              className="bg-[#ff5100] text-white font-extrabold uppercase px-8 py-3 hover:cursor-pointer hover:bg-[#0a1e5e] transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        ) : (
         <form onSubmit={handleSubmit} className="px-6 py-8 space-y-4">
+          {/* Honeypot field, hidden from people and screen readers */}
+          <input
+            type="text"
+            name="company"
+            value={form.company}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="hidden"
+          />
           <div>
             <label className="block text-gray-700 text-[12px] font-semibold mb-1 uppercase" htmlFor="contact-name">Name</label>
             <input
@@ -88,11 +126,19 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
 
           <button
             type="submit"
-            className="w-full bg-[#ff5100] text-white font-extrabold uppercase py-3 hover:cursor-pointer hover:bg-[#0a1e5e] hover:text-[#ff5100] transition-colors active:scale-95"
+            disabled={status === "sending"}
+            className="w-full bg-[#ff5100] text-white font-extrabold uppercase py-3 hover:cursor-pointer hover:bg-[#0a1e5e] hover:text-[#ff5100] transition-colors active:scale-95 disabled:opacity-60 disabled:cursor-wait"
           >
-            Send Message
+            {status === "sending" ? "Sending..." : "Send Message"}
           </button>
+          {status === "error" && (
+            <p role="alert" className="text-sm text-red-700">
+              {errorMessage} You can also email us at{" "}
+              <a href="mailto:info@sinneogroup.co.za" className="underline">info@sinneogroup.co.za</a>.
+            </p>
+          )}
         </form>
+        )}
 
         {/* Footer Note */}
         <div className="px-6 py-4 text-center text-[10px] text-gray-500 border-t border-gray-200">

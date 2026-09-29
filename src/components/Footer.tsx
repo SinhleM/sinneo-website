@@ -1,9 +1,17 @@
 "use client";
 import React from "react";
 import { Building2, ArrowUp, MapPin, Mail } from "lucide-react";
+import { companyDetails } from "@/lib/company";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const legalLine = [
+    companyDetails.groupRegNo && `Sinneo Group Reg. No. ${companyDetails.groupRegNo}`,
+    companyDetails.fintechRegNo && `Sinneo Financial Technologies Reg. No. ${companyDetails.fintechRegNo}`,
+    companyDetails.bbbeeLevel && `B-BBEE ${companyDetails.bbbeeLevel}`,
+  ]
+    .filter(Boolean)
+    .join(" · ");
 
   const quickLinks = [
     { href: "#about", label: "About" },
@@ -98,8 +106,13 @@ const Footer = () => {
             <p className="text-[10px] tracking-widest uppercase font-semibold opacity-90">
               © {currentYear} Sinneo Group (Pty) Ltd | Sinneo Financial Technologies (Pty) Ltd
             </p>
+            {legalLine && (
+              <p className="text-[9px] tracking-widest uppercase opacity-80">
+                {legalLine}
+              </p>
+            )}
             <p className="text-[9px] tracking-widest uppercase opacity-80">
-              Pretoria, ZA
+              POPIA compliant · Zero data retention · Pretoria, ZA
             </p>
           </div>
 
