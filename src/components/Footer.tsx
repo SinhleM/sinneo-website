@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Building2, ArrowUp, Phone, MapPin, Mail } from "lucide-react";
+import { Building2, ArrowUp, MapPin, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -63,12 +63,6 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#ff5100] mt-0.5" />
                 <p className="text-white/80">Pretoria, Gauteng<br />South Africa</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#ff5100]" />
-                <a href="tel:+27739869091" className="text-white/80 hover:text-white transition-colors cursor-pointer">
-                  +27 73 986 9091
-                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#ff5100]" />

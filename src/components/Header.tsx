@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,20 +33,8 @@ const Header = () => {
         <div className="container mx-auto px-6 flex justify-between items-center text-[10px] font-medium uppercase tracking-[0.15em]">
           <div className="flex items-center gap-6">
             <a
-              href="tel:+27739869091"
-              className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors duration-300 group"
-            >
-              <Phone
-                size={10}
-                style={{ color: brandOrange }}
-                className="group-hover:scale-110 transition-transform"
-              />
-              <span>+27 73 986 9091</span>
-            </a>
-
-            <a
               href="mailto:info@sinneogroup.co.za"
-              className="flex items-center gap-2 border-l border-white/10 pl-6 cursor-pointer hover:text-white transition-colors duration-300 group"
+              className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors duration-300 group"
             >
               <Mail
                 size={10}
