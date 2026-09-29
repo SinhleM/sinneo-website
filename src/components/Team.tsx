@@ -1,6 +1,5 @@
-"use client";
+import Image from "next/image";
 import React from "react";
-import { ArrowUp } from "lucide-react";
 
 const teamMembers = [
   {
@@ -53,10 +52,12 @@ const Team = () => {
               
               {/* Image Container - Square Aspect Ratio */}
               <div className="relative overflow-hidden w-full aspect-square mb-5 bg-gray-50 border border-gray-100">
-                <img
+                <Image
                   src={member.image}
+                  fill
+                  sizes="(min-width: 768px) 340px, 100vw"
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
+                  className="object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
                 />
               </div>
 

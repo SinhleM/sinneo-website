@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, Mail } from "lucide-react";
 
@@ -62,10 +63,14 @@ const Header = () => {
             {/* Logo */}
             <div className="w-[180px] flex-shrink-0">
               <a href="#home" className="cursor-pointer">
-                <img
+                <Image
                   src="/output-onlinepngtools - Copy.png"
+                  width={1536}
+                  height={490}
+                  priority
+                  sizes="180px"
                   alt="Sinneo Group Logo"
-                  className={`transition-all duration-500 object-contain ${
+                  className={`w-auto transition-all duration-500 object-contain ${
                     scrolled ? "h-8" : "h-11"
                   }`}
                 />

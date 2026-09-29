@@ -31,10 +31,6 @@ const Contact = () => {
       {/* Upper Content Area */}
       <div
         className="relative py-24 md:py-32 bg-[#0a1e5e] overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(10, 30, 94, 0.9), rgba(10, 30, 94, 0.9)), url('https://www.transparenttextures.com/patterns/blueprint.png')`,
-          backgroundSize: 'cover'
-        }}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center md:text-left">
           {/* Hollow Watermark */}
@@ -46,12 +42,12 @@ const Contact = () => {
               WebkitTextStroke: '2px #ffffff'
             }}
           >
-            LET'S CHAT
+            LET&apos;S CHAT
           </span>
 
           <div className="relative z-20 max-w-2xl">
             <h2 className="text-4xl md:text-6xl font-extrabold text-white uppercase tracking-tighter mb-8 leading-none">
-              LET'S TALK WITH US
+              LET&apos;S TALK WITH US
             </h2>
 
             <div className="text-blue-100/80 [&_p]:text-blue-100/80 text-sm md:text-base font-medium leading-relaxed mb-10 max-w-xl space-y-4">

@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 const Hero = () => {
@@ -10,10 +10,13 @@ const Hero = () => {
     >
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/tebogo-losaba-ybjhQsdXxzY-unsplash.jpg"
+          fill
+          priority
+          sizes="100vw"
           alt="Johannesburg Skyline"
-          className="w-full h-full object-cover"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-[#0f172a]/70" />
       </div>
@@ -22,7 +25,7 @@ const Hero = () => {
         <div className="max-w-5xl" suppressHydrationWarning>
 
           {/* Accent Line */}
-          <div className="flex items-center justify-start gap-4 mb-8 animate-fade-in">
+          <div className="flex items-center justify-start gap-4 mb-8">
             <div className="w-16 h-[3px] bg-[#ff5100]" />
             <span className="text-white text-xs font-extrabold uppercase tracking-[0.3em]">
               Sinneo Group · South Africa
@@ -30,7 +33,7 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white leading-[0.85] mb-6 animate-fade-in italic uppercase tracking-tighter">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white leading-[0.85] mb-6 italic uppercase tracking-tighter">
             WE BUILD
             <br />
             PRODUCTS
@@ -39,9 +42,9 @@ const Hero = () => {
           </h1>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row justify-start gap-5 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-col sm:flex-row justify-start gap-5">
             <a
-              href="#sorae"
+              href="#portfolio"
               className="bg-[#ff5100] hover:bg-[#e04800] text-white px-12 py-5 text-sm font-extrabold uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-3 group"
             >
               See What We Built

@@ -1,11 +1,7 @@
-"use client";
 import React from "react";
-import { Quote, ArrowUp, Star } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 
 const Testimonial = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <section className="relative bg-[#0a1e5e] overflow-hidden">

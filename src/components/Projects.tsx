@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const categories = ["Show All", "Fintech", "Software", "API"];
@@ -73,10 +74,12 @@ const Projects = () => {
 
               {/* Image Container */}
               <div className="relative overflow-hidden aspect-square mb-4 bg-gray-50 border border-gray-100">
-                <img
+                <Image
                   src={project.image}
+                  fill
+                  sizes="(min-width: 768px) 340px, 100vw"
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale-[20%] transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                  className="object-cover grayscale-[20%] transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
                 />
               </div>
 

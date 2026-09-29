@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const About = () => {
@@ -37,7 +38,7 @@ const About = () => {
                 infrastructure for the South African market.
               </p>
               <p className="text-gray-600 text-base leading-relaxed mb-10">
-                We operate with a builder's mindset. We prioritise shipping real products
+                We operate with a builder&apos;s mindset. We prioritise shipping real products
                 over pitching ideas. Our flagship product, Sorae, is a live bank statement
                 intelligence API trusted by lenders, rental agents, and employers to make
                 fast, reliable affordability decisions without manual review.
@@ -85,8 +86,11 @@ const About = () => {
           <div className="relative">
             {/* Main Image Container */}
             <div className="relative z-10 overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="/tommy-texter-T42j_xLOqw0-unsplash.jpg"
+                width={5903}
+                height={3935}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 alt="Sinneo Group Builder"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
               />

@@ -43,7 +43,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" className="bg-white w-full max-w-md mx-4 md:mx-0 shadow-xl overflow-hidden animate-fadeIn">
+      <div role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" className="bg-white w-full max-w-md mx-4 md:mx-0 shadow-xl overflow-hidden">
         
         {/* Header */}
         <div className="flex justify-between items-center px-6 py-4 bg-[#0a1e5e]">

@@ -16,12 +16,36 @@ const montserrat = localFont({
   variable: "--font-montserrat",
 });
 
+const siteUrl = "https://sinneogroup.co.za";
+const description =
+  "Sinneo Group is a South African technology holding company building Sorae, a bank statement intelligence API, plus ICT infrastructure and AI & data engineering services.";
+
 export const metadata: Metadata = {
-  title: "Sinneo Group",
-  description: "Building Solutions that transform business",
-  icons: {
-    icon: "/app/favicon.ico",
-  }
+  metadataBase: new URL(siteUrl),
+  title: "Sinneo Group | Fintech, ICT & AI Engineering, South Africa",
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "Sinneo Group",
+    title: "Sinneo Group | We build products that ship",
+    description,
+    locale: "en_ZA",
+    images: [{ url: "/tebogo-losaba-ybjhQsdXxzY-unsplash.jpg", width: 4000, height: 2667, alt: "Johannesburg skyline" }],
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Sinneo Group (Pty) Ltd",
+  url: siteUrl,
+  logo: `${siteUrl}/Sinneo-Logo-Transparent.png`,
+  email: "info@sinneogroup.co.za",
+  address: { "@type": "PostalAddress", addressLocality: "Pretoria", addressRegion: "Gauteng", addressCountry: "ZA" },
+  subOrganization: { "@type": "Organization", name: "Sinneo Financial Technologies (Pty) Ltd" },
 };
 
 export default function RootLayout({
@@ -32,6 +56,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable} suppressHydrationWarning>
       <body className="antialiased bg-gray-50 text-gray-900 min-h-screen flex flex-col" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Header />
         <main className="flex-grow">
           {children}

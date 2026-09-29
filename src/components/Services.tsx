@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 import { Plus } from "lucide-react";
 
 const services = [
@@ -46,11 +46,13 @@ const Services = () => {
             <div key={service.title} className="group flex flex-col cursor-pointer w-full max-w-[320px]">
 
               {/* Square Image Box */}
-              <div className="overflow-hidden mb-4 aspect-square bg-gray-100 border border-gray-100 w-full">
-                <img
+              <div className="relative overflow-hidden mb-4 aspect-square bg-gray-100 border border-gray-100 w-full">
+                <Image
                   src={service.image}
+                  fill
+                  sizes="(min-width: 768px) 320px, 100vw"
                   alt={service.title}
-                  className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-in-out"
+                  className="object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-in-out"
                 />
               </div>
 
@@ -67,7 +69,7 @@ const Services = () => {
                   rel={service.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-500 group-hover:text-[#0f172a] transition-colors"
                 >
-                  Read More
+                  Read More<span className="sr-only"> about {service.title}</span>
                 </a>
 
                 <div className="w-8 h-8 flex items-center justify-center bg-[#f8fafc] border border-gray-100 text-[#38bdf8] group-hover:bg-[#38bdf8] group-hover:border-[#38bdf8] group-hover:text-white transition-all duration-300">
