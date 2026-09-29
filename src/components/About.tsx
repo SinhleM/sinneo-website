@@ -32,15 +32,15 @@ const About = () => {
             <div className="text-gray-600 text-base leading-relaxed mb-4 space-y-4">
               <p className="text-[#0f172a] text-lg font-semibold leading-relaxed mb-6">
                 Sinneo Group is a founder led holding company built around execution,
-                systems, and long term value creation. Our first operating division ;
-                Sinneo Financial Technologies (Pty) Ltd builds intelligent financial
+                systems, and long term value creation. Our first operating division,
+                Sinneo Financial Technologies (Pty) Ltd, builds intelligent financial
                 infrastructure for the South African market.
               </p>
               <p className="text-gray-600 text-base leading-relaxed mb-10">
                 We operate with a builder's mindset. We prioritise shipping real products
                 over pitching ideas. Our flagship product, Sorae, is a live bank statement
                 intelligence API trusted by lenders, rental agents, and employers to make
-                fast, reliable affordability decisions ; without manual review.
+                fast, reliable affordability decisions without manual review.
               </p>
             </div>
 
@@ -55,7 +55,7 @@ const About = () => {
                 </p>
                 <p>
                   <span className="text-md font-semibold text-gray-900">Privacy is not an after thought. </span> Sorae
-                  is built on a zero data retention architecture ; raw statements are never
+                  is built on a zero data retention architecture: raw statements are never
                   stored, making it POPIA compliant by design. In a market where data privacy
                   obligations are increasingly enforced, this is a meaningful competitive advantage.
                 </p>
@@ -65,7 +65,7 @@ const About = () => {
                   using disciplined systems, not shortcuts.
                 </p>
                 <p>
-                  We are building for the long term ; starting with the tools that the South
+                  We are building for the long term, starting with the tools that the South
                   African credit and rental market needs right now.
                 </p>
               </div>

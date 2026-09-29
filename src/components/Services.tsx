@@ -3,7 +3,7 @@ import { Plus } from "lucide-react";
 
 const services = [
   {
-    title: "Sorae — Financial Intelligence API",
+    title: "Sorae: Financial Intelligence API",
     image: "/imgae11.avif",
     link: "https://sorae.co.za",
   },
