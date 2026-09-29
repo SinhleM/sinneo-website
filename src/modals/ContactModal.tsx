@@ -1,11 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface ContactModalProps {
   onClose: () => void;
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -22,14 +28,15 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white w-full max-w-md mx-4 md:mx-0 shadow-xl overflow-hidden animate-fadeIn">
+      <div role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" className="bg-white w-full max-w-md mx-4 md:mx-0 shadow-xl overflow-hidden animate-fadeIn">
         
         {/* Header */}
         <div className="flex justify-between items-center px-6 py-4 bg-[#0a1e5e]">
-          <h3 className="text-white text-lg font-black uppercase">Contact Us</h3>
+          <h3 id="contact-modal-title" className="text-white text-lg font-extrabold uppercase">Contact Us</h3>
           <button 
-            onClick={onClose} 
-            className="text-white font-bold text-xl hover:text-[#ff5100] transition-colors"
+            onClick={onClose}
+            aria-label="Close contact form"
+            className="text-white font-semibold text-xl hover:text-[#ff5100] transition-colors"
           >
             &times;
           </button>
@@ -38,10 +45,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="px-6 py-8 space-y-4">
           <div>
-            <label className="block text-gray-700 text-[12px] font-bold mb-1 uppercase">Name</label>
+            <label className="block text-gray-700 text-[12px] font-semibold mb-1 uppercase" htmlFor="contact-name">Name</label>
             <input
+              autoFocus
+              id="contact-name"
               type="text"
               name="name"
+              autoComplete="name"
               value={form.name}
               onChange={handleChange}
               required
@@ -50,10 +60,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           </div>
 
           <div>
-            <label className="block text-gray-700 text-[12px] font-bold mb-1 uppercase">Email</label>
+            <label className="block text-gray-700 text-[12px] font-semibold mb-1 uppercase" htmlFor="contact-email">Email</label>
             <input
+              id="contact-email"
               type="email"
               name="email"
+              autoComplete="email"
               value={form.email}
               onChange={handleChange}
               required
@@ -62,8 +74,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
           </div>
 
           <div>
-            <label className="block text-gray-700 text-[12px] font-bold mb-1 uppercase">Message</label>
+            <label className="block text-gray-700 text-[12px] font-semibold mb-1 uppercase" htmlFor="contact-message">Message</label>
             <textarea
+              id="contact-message"
               name="message"
               value={form.message}
               onChange={handleChange}
@@ -75,7 +88,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
 
           <button
             type="submit"
-            className="w-full bg-[#ff5100] text-white font-black uppercase py-3 hover:cursor-pointer hover:bg-[#0a1e5e] hover:text-[#ff5100] transition-colors active:scale-95"
+            className="w-full bg-[#ff5100] text-white font-extrabold uppercase py-3 hover:cursor-pointer hover:bg-[#0a1e5e] hover:text-[#ff5100] transition-colors active:scale-95"
           >
             Send Message
           </button>

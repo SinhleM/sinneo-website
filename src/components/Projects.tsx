@@ -36,7 +36,8 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-8">
           <div className="relative h-20 flex items-end">
             <span
-              className="absolute -top-1 left-0 text-[50px] md:text-[80px] font-black leading-none select-none z-0"
+              aria-hidden="true"
+              className="absolute -top-1 left-0 text-[50px] md:text-[80px] font-extrabold leading-none select-none z-0"
               style={{
                 color: 'transparent',
                 WebkitTextStroke: '1px #e5e7eb'
@@ -44,24 +45,25 @@ const Projects = () => {
             >
               GALLERY
             </span>
-            <h2 className="relative z-10 text-2xl md:text-3xl font-black text-[#0f172a] uppercase tracking-tighter pb-1">
+            <h2 className="relative z-10 text-2xl md:text-3xl font-extrabold text-[#0f172a] uppercase tracking-tighter pb-1">
               OUR PROJECTS
             </h2>
           </div>
 
           {/* Navigation Filters */}
-          <nav className="flex flex-wrap gap-5 z-10 pb-1">
+          <div role="group" aria-label="Filter projects" className="flex flex-wrap gap-5 z-10 pb-1">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`text-[10px] font-black uppercase tracking-widest transition-colors ${activeFilter === cat ? "text-[#ff5100]" : "text-gray-400 hover:text-[#0f172a] hover:cursor-pointer"
+                aria-pressed={activeFilter === cat}
+                className={`text-[10px] font-extrabold uppercase tracking-widest transition-colors ${activeFilter === cat ? "text-[#ff5100]" : "text-gray-500 hover:text-[#0f172a] hover:cursor-pointer"
                   }`}
               >
                 {cat}
               </button>
             ))}
-          </nav>
+          </div>
         </div>
 
         {/* Project Grid */}
@@ -79,10 +81,10 @@ const Projects = () => {
               </div>
 
               {/* Text Info */}
-              <h3 className="text-base font-black text-[#0f172a] uppercase tracking-tight mb-1">
+              <h3 className="text-base font-extrabold text-[#0f172a] uppercase tracking-tight mb-1">
                 {project.title}
               </h3>
-              <p className="text-[#38bdf8] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+              <p className="text-[#38bdf8] text-[10px] font-semibold uppercase tracking-[0.2em] mb-4">
                 {project.category}
               </p>
 

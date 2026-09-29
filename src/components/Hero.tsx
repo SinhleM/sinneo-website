@@ -24,13 +24,13 @@ const Hero = () => {
           {/* Accent Line */}
           <div className="flex items-center justify-start gap-4 mb-8 animate-fade-in">
             <div className="w-16 h-[3px] bg-[#ff5100]" />
-            <span className="text-white text-xs font-black uppercase tracking-[0.3em]">
+            <span className="text-white text-xs font-extrabold uppercase tracking-[0.3em]">
               Sinneo Group · South Africa
             </span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white leading-[0.85] mb-6 animate-fade-in italic uppercase tracking-tighter">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white leading-[0.85] mb-6 animate-fade-in italic uppercase tracking-tighter">
             WE BUILD
             <br />
             PRODUCTS
@@ -42,7 +42,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row justify-start gap-5 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <a
               href="#sorae"
-              className="bg-[#ff5100] hover:bg-[#e04800] text-white px-12 py-5 text-sm font-black uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-3 group"
+              className="bg-[#ff5100] hover:bg-[#e04800] text-white px-12 py-5 text-sm font-extrabold uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-3 group"
             >
               See What We Built
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -51,7 +51,7 @@ const Hero = () => {
               href="https://sorae.co.za"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-white/40 text-white hover:border-white hover:bg-white hover:text-[#0f172a] px-12 py-5 text-sm font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3"
+              className="border-2 border-white/40 text-white hover:border-white hover:bg-white hover:text-[#0f172a] px-12 py-5 text-sm font-extrabold uppercase tracking-widest transition-all flex items-center justify-center gap-3"
             >
               Visit Sorae
               <ExternalLink className="w-4 h-4" />

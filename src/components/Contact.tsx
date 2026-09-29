@@ -39,7 +39,8 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center md:text-left">
           {/* Hollow Watermark */}
           <span
-            className="absolute -top-10 md:-top-16 left-1/2 md:left-12 -translate-x-1/2 md:translate-x-0 text-[60px] md:text-[120px] font-black leading-none select-none opacity-10"
+            aria-hidden="true"
+            className="absolute -top-10 md:-top-16 left-1/2 md:left-12 -translate-x-1/2 md:translate-x-0 text-[60px] md:text-[120px] font-extrabold leading-none select-none opacity-10"
             style={{
               color: 'transparent',
               WebkitTextStroke: '2px #ffffff'
@@ -49,11 +50,11 @@ const Contact = () => {
           </span>
 
           <div className="relative z-20 max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white uppercase tracking-tighter mb-8 leading-none">
               LET'S TALK WITH US
             </h2>
 
-            <div className="text-blue-100/80 text-sm md:text-base font-medium leading-relaxed mb-10 max-w-xl space-y-4">
+            <div className="text-blue-100/80 [&_p]:text-blue-100/80 text-sm md:text-base font-medium leading-relaxed mb-10 max-w-xl space-y-4">
               <p>
                 Sinneo Group is a technology-driven company focused on building intelligent,
                 scalable solutions. Our flagship API, <strong>Sorae</strong>, revolutionizes financial decision-making
@@ -69,7 +70,7 @@ const Contact = () => {
             {/* Contact Us Button */}
             <button
               onClick={handleModalOpen}
-              className="cursor-pointer bg-white text-[#0a1e5e] font-black uppercase tracking-widest text-[10px] px-10 py-4 transition-all duration-300 hover:bg-[#ff5100] hover:text-white active:scale-95 shadow-lg"
+              className="cursor-pointer bg-white text-[#0a1e5e] font-extrabold uppercase tracking-widest text-[10px] px-10 py-4 transition-all duration-300 hover:bg-[#ff5100] hover:text-white active:scale-95 shadow-lg"
             >
               CONTACT US
             </button>
@@ -90,16 +91,16 @@ const Contact = () => {
                 } mb-8 md:mb-0`}
             >
               {/* Number */}
-              <div className="text-white font-black text-5xl md:text-6xl leading-none opacity-40">
+              <div className="text-white font-extrabold text-5xl md:text-6xl leading-none opacity-40">
                 {pillar.id}
               </div>
 
               {/* Text Pillar Content */}
               <div className="flex flex-col">
-                <span className="text-white font-black text-lg md:text-xl uppercase leading-tight tracking-tight mb-1">
+                <span className="text-white font-extrabold text-lg md:text-xl uppercase leading-tight tracking-tight mb-1">
                   {pillar.title}
                 </span>
-                <span className="text-white/80 font-bold text-[10px] md:text-[11px] uppercase tracking-[0.15em]">
+                <span className="text-white/80 font-semibold text-[10px] md:text-[11px] uppercase tracking-[0.15em]">
                   {pillar.subtitle}
                 </span>
               </div>

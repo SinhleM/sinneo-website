@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-in-out ${
-        scrolled ? "shadow-lg -translate-y-[37px]" : "shadow-md translate-y-0"
+        scrolled ? "shadow-lg md:-translate-y-[37px]" : "shadow-md translate-y-0"
       }`}
     >
       {/* TOP BAR */}
@@ -74,7 +74,7 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex flex-grow justify-center">
-              <nav className="flex items-center gap-5 translate-x-12">
+              <nav aria-label="Main" className="flex items-center gap-5 translate-x-12">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
@@ -92,7 +92,7 @@ const Header = () => {
             <div className="hidden md:flex w-[180px] justify-end flex-shrink-0">
               <a
                 href="#contact"
-                className={`bg-[#ff5100] hover:bg-[#e64a00] text-white rounded-sm text-[9px] font-black uppercase tracking-[0.12em] transition-all duration-300 cursor-pointer shadow-md active:scale-95 ${
+                className={`bg-[#ff5100] hover:bg-[#e64a00] text-white rounded-sm text-[9px] font-extrabold uppercase tracking-[0.12em] transition-all duration-300 cursor-pointer shadow-md active:scale-95 ${
                   scrolled ? "px-4 py-1.5" : "px-6 py-2.5"
                 }`}
               >
@@ -103,6 +103,9 @@ const Header = () => {
             {/* Mobile Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
               className="md:hidden text-white p-2 ml-auto cursor-pointer"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,6 +115,8 @@ const Header = () => {
 
         {/* MOBILE MENU WITH SLIDE + FADE */}
         <div
+          id="mobile-menu"
+          inert={!isMenuOpen}
           className={`md:hidden bg-[#1e293b]/95 backdrop-blur-md border-t border-white/10 transition-all duration-300 transform origin-top ${
             isMenuOpen
               ? "opacity-100 scale-y-100 max-h-screen py-4"
@@ -134,7 +139,7 @@ const Header = () => {
             <a
               href="#contact"
               onClick={() => setIsMenuOpen(false)}
-              className="mt-2 bg-[#ff5100] hover:bg-[#e64a00] text-white rounded-sm text-sm font-black uppercase tracking-[0.1em] px-6 py-2 transition-all duration-300 shadow-md"
+              className="mt-2 bg-[#ff5100] hover:bg-[#e64a00] text-white rounded-sm text-sm font-extrabold uppercase tracking-[0.1em] px-6 py-2 transition-all duration-300 shadow-md"
             >
               Get Started
             </a>

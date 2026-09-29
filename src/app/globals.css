@@ -43,7 +43,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-gray-900;
+    @apply font-semibold tracking-tight text-gray-900;
   }
 
   p {
@@ -78,4 +78,18 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Visible keyboard focus for all interactive elements */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid #ff5100;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+/* Keep anchor targets clear of the fixed header */
+section[id] {
+  scroll-margin-top: 5rem;
 }

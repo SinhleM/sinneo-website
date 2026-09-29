@@ -15,7 +15,8 @@ const Testimonial = () => {
         <div className="relative mb-12">
           {/* Hollow Watermark "FEEDBACK" */}
           <span
-            className="absolute -top-13 left-0 text-[60px] md:text-[90px] font-black leading-none select-none opacity-20 z-0 pointer-events-none"
+            aria-hidden="true"
+            className="absolute -top-13 left-0 text-[60px] md:text-[90px] font-extrabold leading-none select-none opacity-20 z-0 pointer-events-none"
             style={{
               color: "transparent",
               WebkitTextStroke: "1px #ffffff",
@@ -25,7 +26,7 @@ const Testimonial = () => {
           </span>
 
           {/* Main Title */}
-          <h2 className="relative z-10 text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none">
+          <h2 className="relative z-10 text-4xl md:text-5xl font-extrabold text-white uppercase tracking-tighter leading-none">
             TESTIMONIAL
           </h2>
         </div>
@@ -56,16 +57,16 @@ const Testimonial = () => {
             <div className="h-10 w-[2px] bg-[#ff5100] mr-4"></div>
 
             <div className="flex flex-col">
-              <span className="text-white font-bold text-lg leading-tight">
+              <span className="text-white font-semibold text-lg leading-tight">
                 Sinhle Mkhabela
               </span>
-              <span className="text-blue-200/50 text-sm font-medium">
-                Cheif Technology Officer
+              <span className="text-blue-200/80 text-sm font-medium">
+                Chief Technology Officer
               </span>
             </div>
 
             {/* 5 Star Rating - Right aligned */}
-            <div className="flex gap-1 ml-auto">
+            <div className="flex gap-1 ml-auto" role="img" aria-label="Rated 5 out of 5">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}

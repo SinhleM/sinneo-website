@@ -31,7 +31,8 @@ const Team = () => {
         {/* Header Section - Scaled Down */}
         <div className="relative mb-12 h-24 flex items-end">
           <span
-            className="absolute top-0 left-0 text-[60px] md:text-[90px] font-black leading-none select-none z-0"
+            aria-hidden="true"
+            className="absolute top-0 left-0 text-[60px] md:text-[90px] font-extrabold leading-none select-none z-0"
             style={{
               color: "transparent",
               WebkitTextStroke: "1px #f1f5f9", // Lightened stroke to match other sections
@@ -40,7 +41,7 @@ const Team = () => {
             EXPERTS
           </span>
 
-          <h2 className="relative z-10 text-2xl md:text-3xl font-black text-[#0f172a] uppercase tracking-tighter pb-2">
+          <h2 className="relative z-10 text-2xl md:text-3xl font-extrabold text-[#0f172a] uppercase tracking-tighter pb-2">
             OUR TEAM
           </h2>
         </div>
@@ -65,12 +66,12 @@ const Team = () => {
                 <div className="w-full h-[2px] bg-gray-100 group-hover:bg-[#ff5100] transition-colors duration-300 mb-4"></div>
                 
                 {/* Role - Small & Spaced */}
-                <span className="text-[#ff5100] font-bold text-[10px] uppercase tracking-[0.2em] mb-1">
+                <span className="text-[#ff5100] font-semibold text-[10px] uppercase tracking-[0.2em] mb-1">
                   {member.role}
                 </span>
                 
                 {/* Name - Scaled to base size */}
-                <h3 className="text-[#0f172a] font-black text-lg md:text-xl uppercase tracking-tight">
+                <h3 className="text-[#0f172a] font-extrabold text-lg md:text-xl uppercase tracking-tight">
                   {member.name}
                 </h3>
               </div>

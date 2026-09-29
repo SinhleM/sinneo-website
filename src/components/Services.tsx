@@ -27,7 +27,8 @@ const Services = () => {
         {/* Section Header */}
         <div className="relative mb-12 h-24 flex items-end">
           <span
-            className="absolute top-0 left-0 text-[60px] md:text-[90px] font-black leading-none select-none z-0"
+            aria-hidden="true"
+            className="absolute top-0 left-0 text-[60px] md:text-[90px] font-extrabold leading-none select-none z-0"
             style={{
               color: 'transparent',
               WebkitTextStroke: '1px #e5e7eb'
@@ -35,7 +36,7 @@ const Services = () => {
           >
             SERVICES
           </span>
-          <h2 className="relative z-10 text-2xl md:text-3xl font-black text-[#0f172a] uppercase tracking-tighter pb-2">
+          <h2 className="relative z-10 text-2xl md:text-3xl font-extrabold text-[#0f172a] uppercase tracking-tighter pb-2">
             WHAT WE DO
           </h2>
         </div>
@@ -54,7 +55,7 @@ const Services = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-base font-black text-[#0f172a] mb-3 leading-tight uppercase tracking-tight">
+              <h3 className="text-base font-extrabold text-[#0f172a] mb-3 leading-tight uppercase tracking-tight">
                 {service.title}
               </h3>
 
@@ -64,7 +65,7 @@ const Services = () => {
                   href={service.link}
                   target={service.link.startsWith("http") ? "_blank" : undefined}
                   rel={service.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 group-hover:text-[#38bdf8] transition-colors"
+                  className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-500 group-hover:text-[#0f172a] transition-colors"
                 >
                   Read More
                 </a>

@@ -13,7 +13,8 @@ const About = () => {
           <div className="relative">
             {/* Outlined Watermark Text */}
             <span
-              className="absolute -top-12 left-0 text-[60px] md:text-[100px] font-black leading-none select-none z-0 opacity-5"
+              aria-hidden="true"
+              className="absolute -top-12 left-0 text-[60px] md:text-[100px] font-extrabold leading-none select-none z-0 opacity-5"
               style={{
                 color: 'transparent',
                 WebkitTextStroke: '2px #0f172a'
@@ -23,13 +24,13 @@ const About = () => {
             </span>
 
             {/* Main Heading */}
-            <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] uppercase tracking-tighter mb-8">
+            <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0f172a] uppercase tracking-tighter mb-8">
               WHO WE ARE
             </h2>
 
             {/* Initial Preview Text */}
             <div className="text-gray-600 text-base leading-relaxed mb-4 space-y-4">
-              <p className="text-[#0f172a] text-lg font-bold leading-relaxed mb-6">
+              <p className="text-[#0f172a] text-lg font-semibold leading-relaxed mb-6">
                 Sinneo Group is a founder led holding company built around execution,
                 systems, and long term value creation. Our first operating division ;
                 Sinneo Financial Technologies (Pty) Ltd builds intelligent financial
@@ -73,7 +74,8 @@ const About = () => {
             {/* Read More / Show Less Button */}
             <button
               onClick={() => setShowMore(!showMore)}
-              className="bg-[#ff5100] hover:bg-[#e64a00] hover:cursor-pointer text-white font-black uppercase tracking-widest text-xs px-10 py-4 transition-all duration-300 shadow-lg active:scale-95"
+              aria-expanded={showMore}
+              className="bg-[#ff5100] hover:bg-[#e64a00] hover:cursor-pointer text-white font-extrabold uppercase tracking-widest text-xs px-10 py-4 transition-all duration-300 shadow-lg active:scale-95"
             >
               {showMore ? "Show Less" : "Read More"}
             </button>
@@ -92,10 +94,10 @@ const About = () => {
 
             {/* "Since" Badge Overlay */}
             <div className="absolute -bottom-6 -left-6 md:-left-10 z-20 bg-[#1a3073] p-8 md:p-10 min-w-[140px] md:min-w-[180px] text-center shadow-xl">
-              <div className="text-white font-black text-4xl md:text-5xl leading-none mb-1">
+              <div className="text-white font-extrabold text-4xl md:text-5xl leading-none mb-1">
                 2025
               </div>
-              <div className="text-[#38bdf8] font-bold text-xs md:text-sm uppercase tracking-[0.3em]">
+              <div className="text-[#38bdf8] font-semibold text-xs md:text-sm uppercase tracking-[0.3em]">
                 Since
               </div>
             </div>
