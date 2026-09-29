@@ -17,8 +17,8 @@
     var(--brand-secondary)
   );
 
-  /* Font variable (points to the Lato font loaded by Next.js) */
-  --font-sans: var(--font-lato, ui-sans-serif, system-ui);
+  /* Font variable (points to the Montserrat font loaded by Next.js) */
+  --font-sans: var(--font-montserrat, ui-sans-serif, system-ui);
   --font-mono: ui-monospace, monospace;
 }
 

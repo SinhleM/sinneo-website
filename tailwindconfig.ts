@@ -7,7 +7,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-lato)", "ui-sans-serif", "system-ui"],
+        sans: ["var(--font-montserrat)", "ui-sans-serif", "system-ui"],
       },
       colors: {
         border: "hsl(var(--border))",
