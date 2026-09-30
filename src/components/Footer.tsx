@@ -1,10 +1,34 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Building2, ArrowUp, MapPin, Mail } from "lucide-react";
 import { companyDetails } from "@/lib/company";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [feedback, setFeedback] = useState("");
+
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, company }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      setStatus("done");
+      setFeedback("Thanks, you're signed up.");
+      setEmail("");
+    } catch (err) {
+      setStatus("error");
+      setFeedback(err instanceof Error ? err.message : "Something went wrong.");
+    }
+  };
   const legalLine = [
     companyDetails.groupRegNo && `Sinneo Group Reg. No. ${companyDetails.groupRegNo}`,
     companyDetails.fintechRegNo && `Sinneo Financial Technologies Reg. No. ${companyDetails.fintechRegNo}`,
@@ -86,17 +110,36 @@ const Footer = () => {
             <h3 className="text-white font-extrabold text-sm uppercase mb-4 tracking-wider">
               Newsletter
             </h3>
-            <div className="flex flex-nowrap items-stretch mb-4 overflow-hidden rounded-sm border border-gray-800 h-11">
+            <form onSubmit={handleSignup} className="flex flex-nowrap items-stretch mb-4 overflow-hidden rounded-sm border border-gray-800 h-11">
+              <input
+                type="text"
+                name="company"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
               <input
                 type="email"
                 placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 aria-label="Email address for newsletter"
-                className="bg-[#0f172a]/30 text-sm px-4 py-0 w-full focus:ring-0 outline-none border-none min-w-0 cursor-text"
+                className="bg-[#0f172a]/30 text-sm px-4 py-0 w-full outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#ff5100] border-none min-w-0 cursor-text"
               />
-              <button className="bg-[#ff5100] text-white px-6 py-0 text-xs font-extrabold uppercase tracking-tighter hover:bg-[#e64a00] transition-colors whitespace-nowrap flex items-center justify-center cursor-pointer active:scale-95">
-                SIGN UP
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="disabled:opacity-60 bg-[#ff5100] text-white px-6 py-0 text-xs font-extrabold uppercase tracking-tighter hover:bg-[#e64a00] transition-colors whitespace-nowrap flex items-center justify-center cursor-pointer active:scale-95">
+                {status === "sending" ? "..." : "SIGN UP"}
               </button>
-            </div>
+            </form>
+            <p role="status" className={`text-xs min-h-4 ${status === "error" ? "text-red-400" : "text-white/70"}`}>
+              {status === "done" || status === "error" ? feedback : ""}
+            </p>
           </div>
         </div>
 
