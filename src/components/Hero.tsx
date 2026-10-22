@@ -11,7 +11,7 @@ const Hero = () => {
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/tebogo-losaba-ybjhQsdXxzY-unsplash.jpg"
+          src="/hero-bg.avif"
           fill
           priority
           sizes="100vw"

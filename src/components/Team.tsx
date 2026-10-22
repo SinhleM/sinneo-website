@@ -6,19 +6,19 @@ const teamMembers = [
     id: 1,
     name: "Sfiso Dlamini",
     role: "UX Designer",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800&h=800",
+    image: "/team1.avif",
   },
   {
     id: 2,
     name: "Thabo Mokoena",
     role: "Lead Engineer",
-    image: "/fortune-vieyra-xdmtQVVKibU-unsplash.jpg",
+    image: "/team2.avif",
   },
   {
     id: 3,
     name: "Ntabiseng Mabaso",
     role: "Project Manager",
-    image: "https://images.unsplash.com/photo-1590649880765-91b1956b8276?auto=format&fit=crop&q=80&w=800&h=800",
+    image: "/team3.avif",
   },
 ];
 

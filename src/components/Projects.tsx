@@ -13,12 +13,12 @@ const projects = [
   {
     title: "Sorae Web Dashboard",
     category: "Software",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800",
+    image: "/project2.avif",
   },
   {
     title: "Sorae REST API Integration",
     category: "API",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
+    image: "/project3.avif",
   },
 ];
 

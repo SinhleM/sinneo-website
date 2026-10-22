@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Sinneo Group | We build products that ship",
     description,
     locale: "en_ZA",
-    images: [{ url: "/tebogo-losaba-ybjhQsdXxzY-unsplash.jpg", width: 4000, height: 2667, alt: "Johannesburg skyline" }],
+    images: [{ url: "/hero-bg.avif", alt: "Johannesburg skyline" }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -44,7 +44,7 @@ const organizationJsonLd = {
   url: siteUrl,
   logo: `${siteUrl}/Sinneo-Logo-Transparent.png`,
   email: "info@sinneogroup.co.za",
-  address: { "@type": "PostalAddress", addressLocality: "Pretoria", addressRegion: "Gauteng", addressCountry: "ZA" },
+  address: { "@type": "PostalAddress", addressLocality: "Illovo, Sandton", addressRegion: "Gauteng", addressCountry: "ZA" },
   subOrganization: { "@type": "Organization", name: "Sinneo Financial Technologies (Pty) Ltd" },
 };
 

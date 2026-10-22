@@ -87,7 +87,7 @@ const About = () => {
             {/* Main Image Container */}
             <div className="relative z-10 overflow-hidden shadow-2xl">
               <Image
-                src="/tommy-texter-T42j_xLOqw0-unsplash.jpg"
+                src="/about.avif"
                 width={5903}
                 height={3935}
                 sizes="(min-width: 1024px) 50vw, 100vw"

@@ -94,7 +94,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm opacity-70">
               <div className="flex items-start gap-3">
                 <MapPin aria-hidden="true" className="w-4 h-4 text-[#ff5100] mt-0.5" />
-                <p className="text-white/80">Pretoria, Gauteng<br />South Africa</p>
+                <p className="text-white/80">Illovo, Sandton<br />South Africa</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#ff5100]" />
@@ -155,7 +155,7 @@ const Footer = () => {
               </p>
             )}
             <p className="text-[9px] tracking-widest uppercase opacity-80">
-              POPIA compliant · Zero data retention · Pretoria, ZA
+              POPIA compliant · Zero data retention · Illovo, Sandton, ZA
             </p>
           </div>
 
